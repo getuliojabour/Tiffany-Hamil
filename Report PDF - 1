@@ -22,8 +22,32 @@ pdfMake.tableLayouts = {
         paddingBottom: function () {
             return 0; // Remove padding inferior
         }
+    },
+    zebraLayoutA: {
+        fillColor: function (rowIndex, node, columnIndex) {
+            return (rowIndex % 2 === 1) ? '#F2F4F7' : null; // Cor zebra
+        },
+        hLineColor: function () {
+            return '#D0D5DD'; // Cor da linha horizontal
+        },
+        vLineColor: function () {
+            return '#D0D5DD'; // Cor da linha vertical
+        },
+        paddingLeft: function () {
+            return 4; // Remove padding à esquerda
+        },
+        paddingRight: function () {
+            return 4; // Remove padding à direita
+        },
+        paddingTop: function () {
+            return 2; // Remove padding superior
+        },
+        paddingBottom: function () {
+            return 2; // Remove padding inferior
+        }
     }
 };
+
 
 
 var dd = {
@@ -89,60 +113,6 @@ var dd = {
                             {text: 'NO', style: 'smallText', alignment: 'center'},
                             {text: '$629,000\n2/09/23', style: 'smallText', alignment: 'center', bold: true, color: '#101828'},
                             {text: '$500,338', style: 'smallText', alignment: 'center', bold: true, color: '#101828'}
-                        ],
-                         [
-                            {text: '15432\n20219238', style: 'smallText', alignment: 'center'},
-                            {text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallText', alignment: 'center'},
-                            {text: 'N0035\n0.16', style: 'smallText', alignment: 'center'},
-                            {text: 'BENT TREE WEST PHASE\n2 (CDA)', style: 'smallText', alignment: 'center'},
-                            {text: 'RV8\nPLANO ISD', style: 'smallText', alignment: 'center'},
-                            {text: '3,115', style: 'smallText', alignment: 'center'},
-                            {text: '1981\n2005', style: 'smallText', alignment: 'center'},
-                            {text: '4', style: 'smallText', alignment: 'center'},
-                            {text: '3/1', style: 'smallText', alignment: 'center'},
-                            {text: '506', style: 'smallText', alignment: 'center'},
-                            {text: '13,939\n$225,750', style: 'smallText', alignment: 'center'},
-                            {text: 'Y', style: 'smallText', alignment: 'center'},
-                            {text: '1', style: 'smallText', alignment: 'center'},
-                            {text: 'NO', style: 'smallText', alignment: 'center'},
-                            {text: '$629,000\n2/09/23', style: 'smallText', alignment: 'center', bold: true, color: '#101828'},
-                            {text: '$500,338', style: 'smallText', alignment: 'center', bold: true, color: '#101828'}
-                        ],
-                         [
-                            {text: '15432\n20219238', style: 'smallText', alignment: 'center'},
-                            {text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallText', alignment: 'center'},
-                            {text: 'N0035\n0.16', style: 'smallText', alignment: 'center'},
-                            {text: 'BENT TREE WEST PHASE\n2 (CDA)', style: 'smallText', alignment: 'center'},
-                            {text: 'RV8\nPLANO ISD', style: 'smallText', alignment: 'center'},
-                            {text: '3,115', style: 'smallText', alignment: 'center'},
-                            {text: '1981\n2005', style: 'smallText', alignment: 'center'},
-                            {text: '4', style: 'smallText', alignment: 'center'},
-                            {text: '3/1', style: 'smallText', alignment: 'center'},
-                            {text: '506', style: 'smallText', alignment: 'center'},
-                            {text: '13,939\n$225,750', style: 'smallText', alignment: 'center'},
-                            {text: 'Y', style: 'smallText', alignment: 'center'},
-                            {text: '1', style: 'smallText', alignment: 'center'},
-                            {text: 'NO', style: 'smallText', alignment: 'center'},
-                            {text: '$629,000\n2/09/23', style: 'smallText', alignment: 'center', bold: true, color: '#101828'},
-                            {text: '$500,338', style: 'smallText', alignment: 'center', bold: true, color: '#101828'}
-                        ],
-                         [
-                            {text: '15432\n20219238', style: 'smallText', alignment: 'center'},
-                            {text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallText', alignment: 'center'},
-                            {text: 'N0035\n0.16', style: 'smallText', alignment: 'center'},
-                            {text: 'BENT TREE WEST PHASE\n2 (CDA)', style: 'smallText', alignment: 'center'},
-                            {text: 'RV8\nPLANO ISD', style: 'smallText', alignment: 'center'},
-                            {text: '3,115', style: 'smallText', alignment: 'center'},
-                            {text: '1981\n2005', style: 'smallText', alignment: 'center'},
-                            {text: '4', style: 'smallText', alignment: 'center'},
-                            {text: '3/1', style: 'smallText', alignment: 'center'},
-                            {text: '506', style: 'smallText', alignment: 'center'},
-                            {text: '13,939\n$225,750', style: 'smallText', alignment: 'center'},
-                            {text: 'Y', style: 'smallText', alignment: 'center'},
-                            {text: '1', style: 'smallText', alignment: 'center'},
-                            {text: 'NO', style: 'smallText', alignment: 'center'},
-                            {text: '$629,000\n2/09/23', style: 'smallText', alignment: 'center', bold: true, color: '#101828'},
-                            {text: '$500,338', style: 'smallText', alignment: 'center', bold: true, color: '#101828'}
                         ]
 
                 ]
@@ -154,9 +124,11 @@ var dd = {
     // Quebra de página antes da primeira linha de colunas
     { text: '', pageBreak: 'before' },
     
-    // Primeira linha de colunas (primeira tabela - 70%)
-    {
+// Fist Column
+{
         columns: [
+            
+            // First Table
             {
                 width: '50%',
                 style: 'tableStyle',
@@ -230,10 +202,11 @@ var dd = {
                         ]
                     ]
                 },
-                layout: 'noBorders'
+            layout: 'zebraLayoutA' // Aplica o layout personalizado
             },
-            // Coluna 2 vazia por enquanto
-             {
+// 2 TABLE
+
+{
             width: '50%',
             stack: [
                 // Linha 1: Título
@@ -310,7 +283,7 @@ var dd = {
                             ]
                         ]
                     },
-                    layout: 'noBorders'
+            layout: 'zebraLayoutA' // Aplica o layout personalizado
                 },
                 // Total Adjustments
                 {
@@ -329,55 +302,17 @@ var dd = {
                     margin: [0, 0, 0, 10]
                 }
         ],
-        columnGap: 20 // Espaço entre as colunas
+    }
+
+    ],
     },
-    
-    // Espaço entre a primeira e a segunda linha de colunas
-    { text: '', margin: [0, 10, 0, 10] },
-    
-    // Segunda linha de colunas (segunda tabela - 30%)
-    {
-        columns: [
-            {
-                width: '50%',
-                style: 'tableStyle',
-                table: {
-                    headerRows: 2,
-                    widths: ['50%', '25%', '25%'],
-                    body: [
-                        // Linha 1: Título
-                        [
-                            { text: 'Other Improvements Detailed', style: 'smallTextPrimary', colSpan: 3, alignment: 'center', bold: true },
-                            {}, {}
-                        ],
-                        // Linha 2: Cabeçalho
-                        [
-                            { text: 'Type', style: 'headerTable', alignment: 'center' },
-                            { text: 'Sqf', style: 'headerTable', alignment: 'center' },
-                            { text: '$ Imprv Detail', style: 'headerTable', alignment: 'center' }
-                        ],
-                        // Linhas de dados
-                        [
-                            { text: 'Covered Porch/Patio', style: 'smallText' },
-                            { text: '198', style: 'smallText', alignment: 'center' },
-                            { text: '$6,445', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Main Area', style: 'smallText' },
-                            { text: '240', style: 'smallText', alignment: 'center' },
-                            { text: '$31,756', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Enclosed Porch', style: 'smallText' },
-                            { text: '72', style: 'smallText', alignment: 'center' },
-                            { text: '$2,734', style: 'smallText', alignment: 'right' }
-                        ]
-                    ]
-                },
-                layout: 'zebraLayout'
-            },
-            // Coluna 2 vazia por enquanto
-            {
+],  
+    // end Fist Column
+
+{
+            columns: [
+                // -- Column 1: First "Other Improvements Detailed" table
+                {
                     style: 'tableStyle',
                     table: {
                         headerRows: 2,
@@ -385,7 +320,8 @@ var dd = {
                         body: [
                             [
                                 { text: 'Other Improvements Detailed', style: 'smallTextPrimary', colSpan: 3, alignment: 'center', bold: true },
-                                {}, {}
+                                {},
+                                {}
                             ],
                             [
                                 { text: 'Type', style: 'headerTable', alignment: 'center' },
@@ -414,15 +350,55 @@ var dd = {
                             ]
                         ]
                     },
-                    layout: 'zebraLayout'
+                    layout: 'zebraLayoutA',
+                    width: '50%'
+                },
+
+                // -- Column 2: Second "Other Improvements Detailed" table
+                {
+                    style: 'tableStyle',
+                    table: {
+                        headerRows: 2,
+                        widths: ['50%', '25%', '25%'],
+                        body: [
+                            [
+                                { text: 'Other Improvements Detailed', style: 'smallTextPrimary', colSpan: 3, alignment: 'center', bold: true },
+                                {},
+                                {}
+                            ],
+                            [
+                                { text: 'Type', style: 'headerTable', alignment: 'center' },
+                                { text: 'Sqf', style: 'headerTable', alignment: 'center' },
+                                { text: '$ Imprv Detail', style: 'headerTable', alignment: 'center' }
+                            ],
+                            [
+                                { text: 'Covered Porch/Patio', style: 'smallText' },
+                                { text: '360', style: 'smallText', alignment: 'center' },
+                                { text: '$19,241', style: 'smallText', alignment: 'right' }
+                            ],
+                            [
+                                { text: 'Main Area', style: 'smallText' },
+                                { text: '240', style: 'smallText', alignment: 'center' },
+                                { text: '$31,756', style: 'smallText', alignment: 'right' }
+                            ],
+                            [
+                                { text: 'Covered Porch/Patio', style: 'smallText' },
+                                { text: '48', style: 'smallText', alignment: 'center' },
+                                { text: '$1,655', style: 'smallText', alignment: 'right' }
+                            ],
+                            [
+                                { text: 'Covered Porch/Patio', style: 'smallText' },
+                                { text: '126', style: 'smallText', alignment: 'center' },
+                                { text: '$4,345', style: 'smallText', alignment: 'right' }
+                            ]
+                        ]
+                    },
+                    layout: 'zebraLayoutA',
+                    width: '50%'
                 }
-            ]
+            ],
         }
-    ],
-    columnGap: 20 // Espaço entre as colunas
-    }
-],  
-        
+    
         
 
         
@@ -450,7 +426,7 @@ var dd = {
             fontSize: 16,
             bold: false,
             color: '#475467',
-                        alignment: 'left',
+            alignment: 'left',
 
         },
         smallTextPrimary: {
