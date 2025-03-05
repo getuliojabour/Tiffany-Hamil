@@ -397,7 +397,263 @@ var dd = {
                     width: '50%'
                 }
             ],
-        }
+        },
+        {
+    columns: [
+        // ============================================
+        // Coluna 1 (Já está certa, mantendo seu layout)
+        // ============================================
+        {
+            width: '50%',
+            style: 'tableStyle',
+            table: {
+                headerRows: 0,
+                widths: ['50%', '50%'],
+                body: [
+                    [
+                        { text: 'Account Number:', style: 'smallText' },
+                        { text: '15931', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Property Address:', style: 'smallText' },
+                        { text: '4106 BRIARGROVE LN\nDALLAS, TX 75287', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Proposed Value:', style: 'smallText' },
+                        { text: '$580,206', style: 'smallText', alignment: 'right', bold: true }
+                    ],
+                    [
+                        { text: 'Sales Price:', style: 'smallText' },
+                        { text: '(Concession)', style: 'smallTextDestructive', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Sales Date:', style: 'smallText' },
+                        { text: '-', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Class:', style: 'smallText' },
+                        { text: 'RV8', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'ISD:', style: 'smallText' },
+                        { text: 'PLANO', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Square Foot:', style: 'smallText' },
+                        { text: '2,851', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Year Built:', style: 'smallText' },
+                        { text: '1984', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'EYOC:', style: 'smallText' },
+                        { text: '2005', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Story Height:', style: 'smallText' },
+                        { text: '2', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Full Baths:', style: 'smallText' },
+                        { text: '2', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Half Baths:', style: 'smallText' },
+                        { text: '1', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Land Value:', style: 'smallText' },
+                        { text: '$204,250', style: 'smallText', alignment: 'right', bold: true }
+                    ],
+                    [
+                        { text: 'Land Size:', style: 'smallText' },
+                        { text: '9,583', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Garage Size:', style: 'smallText' },
+                        { text: '399', style: 'smallText', alignment: 'right' }
+                    ]
+                ]
+            },
+            layout: 'zebraLayout' // Tudo em zebra
+        },
+
+        // ============================================
+        // Coluna 2 (Linhas em Zebra, conforme pedido)
+        // ============================================
+        {
+            width: '50%',
+            style: 'tableStyle',
+            table: {
+                // zero cabeçalhos formais
+                headerRows: 0,
+                // duas colunas (ex: 50% e 50%)
+                widths: ['50%', '50%'],
+                body: [
+                    // Linha 1: 15432 (esq.) e 1 (dir.)
+                    [
+                        { text: '15432', style: 'smallText', bold: true },
+                        { text: '1', style: 'smallText', alignment: 'right', bold: true }
+                    ],
+                    // Linha 2: Endereço, colSpan p/ ocupar duas colunas
+                    [
+                        { text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallText', colSpan: 2 },
+                        {}
+                    ],
+                    // Linha 3: blank
+                    
+                    // Linha 4: $629 (esq.), blank (dir.)
+                    [
+                        { text: '$629', style: 'smallText' },
+                        { text: '', style: 'smallText' }
+                    ],
+                    // Linha 5: 02/09/2023 (esq.), blank (dir.)
+                    [
+                        { text: '02/09/2023', style: 'smallText' },
+                        { text: '', style: 'smallText' }
+                    ],
+                    // Linha 6: rv8 (esq.), blank (dir.)
+                    [
+                        { text: 'rv8', style: 'smallText' },
+                        { text: '', style: 'smallText' }
+                    ],
+                    // Linha 7: Plano (esq.), n0035 (dir.)
+                    [
+                        { text: 'Plano', style: 'smallText' },
+                        { text: 'n0035', style: 'smallText', alignment: 'right' }
+                    ],
+                    // Linha 8: $316,43 / $1231.156 (colSpan 2, centralizado)
+                    [
+                        { text: '$316,43 / $1231.156', style: 'smallText', colSpan: 2, alignment: 'center' },
+                        {}
+                    ],
+                    // Linha 9: ***HEADER*** (esq.), "Diff | Rate($) | Adjust." (dir.)
+                    [
+                        { text: '***HEADER***', style: 'smallText', bold: true },
+                        { text: 'Diff | Rate($) | Adjust.', style: 'smallText', alignment: 'right', bold: true },
+                    ],
+                    
+                    
+                ]
+            },
+            layout: 'zebraLayoutA' // Também zebra
+        },
+        
+    ],
+},
+{
+  width: '50%', // Ajuste conforme necessário
+  stack: [
+    // ===========================
+    // TABELA 1: 2 colunas
+    // ===========================
+    {
+      style: 'tableStyle',
+      table: {
+        headerRows: 0,
+        widths: ['50%', '50%'], // Duas colunas
+        body: [
+          // Linha 1
+          [
+            { text: '15432', style: 'smallText', bold: true },
+            { text: '1', style: 'smallText', bold: true, alignment: 'right' }
+          ],
+          // Linha 2 (colSpan para unir as 2 colunas)
+          [
+            { text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallText', colSpan: 2 },
+            {}
+          ],
+          // Linha 3 (ex.: Valor)
+          [
+            { text: '$629', style: 'smallText' },
+            { text: '', style: 'smallText' }
+          ],
+          // Linha 4 (ex.: Data)
+          [
+            { text: '02/09/2023', style: 'smallText' },
+            { text: '', style: 'smallText' }
+          ],
+          // Linha 5 (ex.: Class)
+          [
+            { text: 'RV8', style: 'smallText' },
+            { text: '', style: 'smallText' }
+          ],
+          // Linha 6 (ex.: ISD / N0035)
+          [
+            { text: 'PLANO', style: 'smallText' },
+            { text: 'N0035', style: 'smallText', alignment: 'right' }
+          ],
+          // Linha 7 (ex.: Valor de ref)
+          [
+            { text: '$316,43 / $1231.156', style: 'smallText', colSpan: 2, alignment: 'center' },
+            {}
+          ],
+          // Linha 8 (ex.: poderia ser um "header" interno ou algo do tipo)
+          [
+            { text: '***TABLE BELOW***', style: 'smallText', bold: true, colSpan: 2, alignment: 'center' },
+            {}
+          ]
+        ]
+      },
+      layout: 'zebraLayout' // Aplicando zebra
+    },
+
+    // Espaço vertical entre as tabelas
+    { text: '', margin: [0, 10, 0, 10] },
+
+    // ===========================
+    // TABELA 2: 5 colunas
+    // ===========================
+    {
+      style: 'tableStyle',
+      table: {
+        headerRows: 0,
+        widths: ['5%', '20%', '15%', '20%', '40%'], // Cinco colunas
+        body: [
+          [
+            { image: 'checkTrue', width: 12 },  // Checkbox
+            { text: '3,115', style: 'smallText', alignment: 'center' },
+            { text: '264', style: 'smallText', alignment: 'center' },
+            { text: '-$61', style: 'smallTextDestructive', alignment: 'center' },
+            { text: '-16,104', style: 'smallTextDestructive', alignment: 'right' }
+          ],
+          [
+            { image: 'checkFalse', width: 12 },
+            { text: '1981', style: 'smallText', alignment: 'center' },
+            { text: '', style: 'smallText' },
+            { text: '', style: 'smallText' },
+            { text: '0', style: 'smallText', alignment: 'right' }
+          ],
+          [
+            { image: 'checkTrue', width: 12 },
+            { text: '2005', style: 'smallText', alignment: 'center' },
+            { text: '0', style: 'smallText', alignment: 'center' },
+            { text: '', style: 'smallText' },
+            { text: '0', style: 'smallText', alignment: 'right' }
+          ],
+          [
+            { text: '1', style: 'smallText', alignment: 'center' },
+            { text: '3', style: 'smallText', alignment: 'center' },
+            { text: '', style: 'smallText' },
+            { text: '', style: 'smallText' },
+            { text: '-7,320', style: 'smallTextDestructive', alignment: 'right' }
+          ],
+          [
+            { text: '1', style: 'smallText', alignment: 'center' },
+            { text: '$225,750', style: 'smallText', alignment: 'center' },
+            { text: '', style: 'smallText' },
+            { text: '', style: 'smallText' },
+            { text: '-21,500', style: 'smallTextDestructive', alignment: 'right' }
+          ]
+        ]
+      },
+      layout: 'zebraLayout' // Aplicando zebra
+    }
+  ]
+}
+
+
     
         
 
