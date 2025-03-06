@@ -192,7 +192,7 @@ var dd = {
                     ],
                     [
                         { text: 'Square Foot:', style: 'smallText', margin: [0, 4, 0, 3.7] },
-                        { text: '2,851', style: 'smallText', alignment: 'right', margin: [0, 4, , 3.7] }
+                        { text: '2,851', style: 'smallText', alignment: 'right', margin: [0, 4, 0, 3.7] }
                     ],
                     [
                         { text: 'Year Built:', style: 'smallText' },
@@ -219,14 +219,53 @@ var dd = {
                         { text: '$204,250', style: 'smallText', alignment: 'right', bold: true }
                     ],
                     [
-                        { text: 'Land Size:', style: 'smallText' },
+                        { text: 'Land Size:', style: 'smallText', margin: [0, 1, 0 ,1] },
                         { text: '9,583', style: 'smallText', alignment: 'right' }
                     ],
                     [
                         { text: 'Garage Size:', style: 'smallText' },
                         { text: '399', style: 'smallText', alignment: 'right' }
-                    ]
-                ]
+                    ],
+                    [
+                    {
+                        columns: [
+                            { text: 'Pool', style: 'smallText', alignment: 'left' }, // First text
+                            {
+                                columns: [
+                                    { text: 'N', style: 'smallText', alignment: 'left' }, // Second text
+                                    { image: 'checkFalse', width: 8, alignment: 'center', margin: [0, 2, 0, 0] } // Second image, side by side
+                                ],
+                                widths: ['auto', 'auto'], // Both take only the space they need
+                                columnGap: 2, // Small gap to keep them "bem colada" (tightly together)
+                                width: 'auto' // Outer column takes only the space it needs
+                            },
+                            { text: '$0', style: 'smallText', alignment: 'right', bold: true } // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto', '*'], // Widths: auto for first three, * for the last text
+                        colSpan: 2, // Spans all 10 columns
+                        columnGap: 5 // Space between main columns
+                    },
+                    {}
+                    ],
+                    
+                    [
+                    {
+                        columns: [
+                            { text: 'Other Improvements:', style: 'smallText', alignment: 'left', fontSize: 12 }, // First text
+                            { text: '$6,522', style: 'smallText', alignment: 'left', bold: true,  margin: [12, 8, 0, 8]  } // Third text, aligned right
+                        ],
+                        width: ['*', '*'],
+                        colSpan: 2, // Spans all 10 columns
+                    },
+                    {}
+                    ],
+                    
+                    
+                    
+                    
+                ],
+                
+                
             },
             layout: 'zebraLayout' // Tudo em zebra
         },
@@ -454,7 +493,60 @@ var dd = {
                         columns: [
                             { image: 'checkTrue', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
                             { text: '13,670', style: 'smallText', alignment: 'left' }, // First text
-                            { text: '-4,599', style: 'smallText', alignment: 'left' } // Third text, aligned right
+                            { text: '-4,599', style: 'smallText', alignment: 'left',  margin: [-14, 2, 0, 0] } // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto'], // Widths: auto for image and first two texts, * for the third text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],
+                 
+                [
+                    {
+                        columns: [
+                            { image: 'checkFalse', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
+                                { text: '506', style: 'smallText', alignment: 'left' }, // First text
+                            { text: '107', style: 'smallText', alignment: 'left' }, // Second text
+                            { text: '-3257', style: 'smallText', alignment: 'right', bold: true } // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto'], // Widths: auto for image and first two texts, * for the third text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],  
+                
+                [
+                    {
+                        columns: [
+                            {
+                                columns: [
+                                    { image: 'checkFalse', width: 8, alignment: 'left', margin: [4, 2, 0, 0] }, // First image on the left
+                                    { text: 'Y', style: 'smallText', alignment: 'left' }, // First text
+                                    { text: '$30,000', style: 'smallText', alignment: 'left' }, // Second text
+                                    { image: 'checkFalse', width: 8, alignment: 'left', margin: [0, 2, 0, 0] } // Second image, side by side
+                                ],
+                                widths: ['auto', 'auto'], // Both take only the space they need
+                                columnGap: 2, // Small gap to keep them "bem colada" (tightly together)
+                                width: 'auto' // Outer column takes only the space it needs
+                            },
+                            { text: '-3257', style: 'smallText', alignment: 'right', bold: true } // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto', '*'], // Widths: auto for first three, * for the last text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between main columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],
+                
+                  
+                [
+                    {
+                        columns: [
+                            { image: 'checkFalse', width: 8, alignment: 'center', margin: [8, 12, 0, 8.1] }, // Image on the left
+                                { text: '$56.513', style: 'smallText', alignment: 'left', margin: [0, 8, 0, 8] }, // First text
+                            { text: '-53,257', style: 'smallText', alignment: 'right', bold: true,  margin: [0, 8, 0, 8]  } // Third text, aligned right
                         ],
                         widths: ['auto', 'auto', 'auto'], // Widths: auto for image and first two texts, * for the third text
                         colSpan: 10, // Spans all 10 columns
@@ -463,18 +555,38 @@ var dd = {
                     {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
                 ],
                 [
-    {
-        columns: [
-            { image: 'checkTrue', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
-            { text: '13,670', style: 'smallText', alignment: 'left' }, // First text
-            { text: '-4,599', style: 'smallText', alignment: 'left',  margin: [4, 2, 0, 0] } // Second text, aligned right
-        ],
-        widths: ['auto', 100, '*'], // Image: auto, First text: auto, Second text: fills remaining space
-        colSpan: 10, // Spans all 10 columns
-        columnGap: 5 // Space between columns
-    },
-    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
-]
+                    {
+                        columns: [
+                                    { text: 'Total Adjustments', style: 'smallText',
+                                    alignment: 'left',
+                                    fontSize: 10 }, // First text
+                                    { text: '-211,599', style: 'smallText',
+                                    alignment: 'right',
+                                    fontSize: 16} // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto'], // Widths: auto for image and first two texts, * for the third text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],
+                [
+                    {
+                        columns: [
+                                    { text: 'Adjusted Value', style: 'smallText',
+                                    alignment: 'left',
+                                    fontSize: 10 }, // First text
+                                    { text: '611,599', style: 'smallText',
+                                    alignment: 'right',
+                                    fontSize: 16} // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto'], // Widths: auto for image and first two texts, * for the third text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ]
+
                 
                 
                 
