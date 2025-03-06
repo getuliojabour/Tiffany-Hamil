@@ -45,6 +45,7 @@ pdfMake.tableLayouts = {
         paddingBottom: function () {
             return 2; // Remove padding inferior
         }
+        
     }
 };
 
@@ -120,284 +121,383 @@ var dd = {
             layout: 'zebraLayout' // Aplica o layout personalizado
         },
 
- [
-    // Quebra de página antes da primeira linha de colunas
+
     { text: '', pageBreak: 'before' },
-    
-// Fist Column
-{
-        columns: [
-            
-            // First Table
-            {
-                width: '50%',
-                style: 'tableStyle',
-                table: {
-                    headerRows: 0,
-                    widths: ['50%', '50%'],
-                    body: [
-                        [
-                            { text: 'Account Number:', style: 'smallText' },
-                            { text: '15931', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Property Address:', style: 'smallText' },
-                            { text: '4106 BRIARGROVE LN\nDALLAS, TX 75287', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Proposed Value:', style: 'smallText' },
-                            { text: '$580,206', style: 'smallText', alignment: 'right', bold: true }
-                        ],
-                        [
-                            { text: 'Sales Price:', style: 'smallText' },
-                            { text: '(Concession)', style: 'smallTextDestructive', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Sales Date:', style: 'smallText' },
-                            { text: '-', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Class:', style: 'smallText' },
-                            { text: 'RV8', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'ISD:', style: 'smallText' },
-                            { text: 'PLANO', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Square Foot:', style: 'smallText' },
-                            { text: '2,851', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Year Built:', style: 'smallText' },
-                            { text: '1984', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'EYOC:', style: 'smallText' },
-                            { text: '2005', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Story Height:', style: 'smallText' },
-                            { text: '2', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Full Baths:', style: 'smallText' },
-                            { text: '2', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Half Baths:', style: 'smallText' },
-                            { text: '1', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Land Value:', style: 'smallText' },
-                            { text: '$204,250', style: 'smallText', alignment: 'right', bold: true }
-                        ],
-                        [
-                            { text: 'Land Size:', style: 'smallText' },
-                            { text: '9,583', style: 'smallText', alignment: 'right' }
-                        ],
-                        [
-                            { text: 'Garage Size:', style: 'smallText' },
-                            { text: '399', style: 'smallText', alignment: 'right' }
-                        ]
+
+        {
+    columns: [
+        
+        // ============================================
+        // ============================================
+        // ============================================
+        // Start of 1 column 
+        // ============================================
+        // ============================================
+        // ============================================
+        // ============================================
+        
+        
+        {
+            width: '12.5%',
+            style: 'tableStyle',
+            table: {
+                headerRows: 0,
+                widths: ['50%', '50%'],
+                body: [
+                    [
+                        { text: 'Account Number:', style: 'smallText', fontSize: 12,
+            bold: true, 
+            margin: [5, 1.7, 5, 0]  // Padding: [esquerda, cima, direita, baixo]
+},
+                        { text: '15931', style: 'smallText', alignment: 'right', fontSize: 22,
+            bold: true }
+                    ],
+                    [
+                        { text: 'Property Address:', style: 'smallText', fontSize: 12,
+            bold: true },
+                        { text: '4106 BRIARGROVE LN\nDALLAS, TX 75287', style: 'smallText', fontSize: 8 , bold: true, alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Proposed Value:', style: 'smallText' },
+                        { text: '$580,206', style: 'smallText',
+                        alignment: 'right',
+                        bold: true,
+                        fontSize: 16,
+                        margin: [0, 5, 0, 5],
+     }
+                    ],
+                    [
+                        { text: 'Sales Price:', style: 'smallText', margin: [0, 6, 0, 6] },
+                        { text: '(Concession)', style: 'smallTextDestructive',fontSize: 12, alignment: 'right', margin: [0, 6, 0, 6], }
+                    ],
+                    [
+                        { text: 'Sales Date:', style: 'smallText' },
+                        { text: '-', style: 'smallText', alignment: 'center' }
+                    ],
+                    [
+                        { text: 'Class:', style: 'smallText' },
+                        { text: 'RV8', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'ISD:', style: 'smallText' },
+                        { text: 'PLANO', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Improvement Value', style: 'smallText', colSpan: 2 },
+                        { }
+                    ],
+                     [
+                        { text: 'Bldg PPSF', style: 'smallText',  colSpan: 2, margin: [0, 1.8 , 0, 3] },
+                        {  }
+                    ],
+                    [
+                        { text: 'Square Foot:', style: 'smallText', margin: [0, 4, 0, 3.7] },
+                        { text: '2,851', style: 'smallText', alignment: 'right', margin: [0, 4, , 3.7] }
+                    ],
+                    [
+                        { text: 'Year Built:', style: 'smallText' },
+                        { text: '1984', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'EYOC:', style: 'smallText' },
+                        { text: '2005', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Story Height:', style: 'smallText' },
+                        { text: '2', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Full Baths:', style: 'smallText' },
+                        { text: '2', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Half Baths:', style: 'smallText' },
+                        { text: '1', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Land Value:', style: 'smallText' },
+                        { text: '$204,250', style: 'smallText', alignment: 'right', bold: true }
+                    ],
+                    [
+                        { text: 'Land Size:', style: 'smallText' },
+                        { text: '9,583', style: 'smallText', alignment: 'right' }
+                    ],
+                    [
+                        { text: 'Garage Size:', style: 'smallText' },
+                        { text: '399', style: 'smallText', alignment: 'right' }
                     ]
-                },
-            layout: 'zebraLayoutA' // Aplica o layout personalizado
+                ]
             },
-// 2 TABLE
+            layout: 'zebraLayout' // Tudo em zebra
+        },
+        
+        // ============================================
+        // ============================================
+        // ============================================
+        // Start of 2 column 
+        // ============================================
+        // ============================================
+        // ============================================
+        // ============================================
 
-{
-            width: '50%',
-            stack: [
-                // Linha 1: Título
-                {
-                    columns: [
-                        { text: '15432', style: 'smallTextPrimary', bold: true },
-                        { text: '1', style: 'smallTextPrimary', alignment: 'right' }
-                    ],
-                    margin: [0, 0, 0, 10]
-                },
-                // Linha 2: Endereço
-                {
-                    text: '4120 BRETTON BAY LN\nDALLAS, TX 75287',
-                    style: 'smallText',
-                    margin: [0, 0, 0, 10]
-                },
-                // Linha 3: Valor proposto
-                {
-                    text: '$629,000\n02/09/2023\nRV8\nPLANO   N0035',
-                    style: 'smallTextPrimary',
-                    alignment: 'center',
-                    bold: true,
-                    margin: [0, 0, 0, 10]
-                },
-                // Linha 4: Valores adicionais
-                {
-                    text: '$316,253/   $101.53',
-                    style: 'smallTextPrimary',
-                    alignment: 'center',
-                    margin: [0, 0, 0, 10]
-                },
-                // Tabela ajustada com checkbox
-                {
-                    style: 'tableStyle',
-                    table: {
-                        headerRows: 0,
-                        widths: ['5%', '20%', '15%', '20%', '40%'],
-                        body: [
-                            // Exemplo de linha com checkbox
-                            [
-                                { image: 'checkTrue', width: 12 },
-                                { text: '3,115', style: 'smallText', alignment: 'center' },
-                                { text: '264', style: 'smallText', alignment: 'center' },
-                                { text: '-$61', style: 'smallTextDestructive', alignment: 'center' },
-                                { text: '-16,104', style: 'smallTextDestructive', alignment: 'right' }
-                            ],
-                            [
-                                { image: 'checkFalse', width: 12 },
-                                { text: '1981', style: 'smallText', alignment: 'center' },
-                                { text: '', style: 'smallText' },
-                                { text: '', style: 'smallText' },
-                                { text: '0', style: 'smallText', alignment: 'right' }
-                            ],
-                            [
-                                { image: 'checkTrue', width: 12 },
-                                { text: '2005', style: 'smallText', alignment: 'center' },
-                                { text: '0', style: 'smallText', alignment: 'center' },
-                                { text: '', style: 'smallText' },
-                                { text: '0', style: 'smallText', alignment: 'right' }
-                            ],
-                            [
-                                { text: '1', style: 'smallText', alignment: 'center' },
-                                { text: '3', style: 'smallText', alignment: 'center' },
-                                { text: '', style: 'smallText' },
-                                { text: '', style: 'smallText' },
-                                { text: '-7,320', style: 'smallTextDestructive', alignment: 'right' }
-                            ],
-                            [
-                                { text: '1', style: 'smallText', alignment: 'center' },
-                                { text: '$225,750', style: 'smallText', alignment: 'center' },
-                                { text: '', style: 'smallText' },
-                                { text: '', style: 'smallText' },
-                                { text: '-21,500', style: 'smallTextDestructive', alignment: 'right' }
-                            ]
-                        ]
+        {
+    width: '12.5%',
+    style: 'tableStyle',
+    table: {
+        headerRows: 0,
+        // Expanded to 10 columns with proportional widths
+        widths: ['10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%'],
+        body: [
+            // Linha 1: 15432 (esq.) and 1 (dir.) -> colSpan 3 becomes 6, colSpan 1 becomes 4
+            [
+                    { 
+                        text: '15432', 
+                        style: 'smallText', 
+                        fontSize: 22, 
+                        bold: true, 
+                        colSpan: 8, 
+                        margin: [5, 2, 5, 2]  // Padding: [esquerda, cima, direita, baixo]
                     },
-            layout: 'zebraLayoutA' // Aplica o layout personalizado
-                },
-                // Total Adjustments
-                {
-                    columns: [
-                        { text: 'Total Adjustments', style: 'smallTextPrimary', bold: true },
-                        { text: '-$128,651', style: 'smallTextDestructive', alignment: 'right', bold: true }
-                    ],
-                    margin: [0, 10, 0, 10]
-                },
-                // Adjusted Value
-                {
-                    columns: [
-                        { text: 'Adjusted Value', style: 'smallTextPrimary', bold: true },
-                        { text: '$500,338', style: 'smallTextPrimary', alignment: 'right', bold: true }
-                    ],
-                    margin: [0, 0, 0, 10]
-                }
-        ],
-    }
-
-    ],
-    },
-],  
-    // end Fist Column
-
-{
-            columns: [
-                // -- Column 1: First "Other Improvements Detailed" table
-                {
-                    style: 'tableStyle',
-                    table: {
-                        headerRows: 2,
-                        widths: ['50%', '25%', '25%'],
-                        body: [
-                            [
-                                { text: 'Other Improvements Detailed', style: 'smallTextPrimary', colSpan: 3, alignment: 'center', bold: true },
-                                {},
-                                {}
-                            ],
-                            [
-                                { text: 'Type', style: 'headerTable', alignment: 'center' },
-                                { text: 'Sqf', style: 'headerTable', alignment: 'center' },
-                                { text: '$ Imprv Detail', style: 'headerTable', alignment: 'center' }
-                            ],
-                            [
-                                { text: 'Covered Porch/Patio', style: 'smallText' },
-                                { text: '360', style: 'smallText', alignment: 'center' },
-                                { text: '$19,241', style: 'smallText', alignment: 'right' }
-                            ],
-                            [
-                                { text: 'Main Area', style: 'smallText' },
-                                { text: '240', style: 'smallText', alignment: 'center' },
-                                { text: '$31,756', style: 'smallText', alignment: 'right' }
-                            ],
-                            [
-                                { text: 'Covered Porch/Patio', style: 'smallText' },
-                                { text: '48', style: 'smallText', alignment: 'center' },
-                                { text: '$1,655', style: 'smallText', alignment: 'right' }
-                            ],
-                            [
-                                { text: 'Covered Porch/Patio', style: 'smallText' },
-                                { text: '126', style: 'smallText', alignment: 'center' },
-                                { text: '$4,345', style: 'smallText', alignment: 'right' }
-                            ]
-                        ]
+                    {}, {}, {}, {}, {}, {}, {},  // 7 empty cells for colSpan: 8
+                    { 
+                        text: '1', 
+                        style: 'smallText', 
+                        alignment: 'right',
+                        fontSize: 16, 
+                        bold: true, 
+                        colSpan: 2, 
+                        margin: [5, 2, 5, 2]  // Padding: [esquerda, cima, direita, baixo]
                     },
-                    layout: 'zebraLayoutA',
-                    width: '50%'
-                },
-
-                // -- Column 2: Second "Other Improvements Detailed" table
-                {
-                    style: 'tableStyle',
-                    table: {
-                        headerRows: 2,
-                        widths: ['50%', '25%', '25%'],
-                        body: [
-                            [
-                                { text: 'Other Improvements Detailed', style: 'smallTextPrimary', colSpan: 3, alignment: 'center', bold: true },
-                                {},
-                                {}
-                            ],
-                            [
-                                { text: 'Type', style: 'headerTable', alignment: 'center' },
-                                { text: 'Sqf', style: 'headerTable', alignment: 'center' },
-                                { text: '$ Imprv Detail', style: 'headerTable', alignment: 'center' }
-                            ],
-                            [
-                                { text: 'Covered Porch/Patio', style: 'smallText' },
-                                { text: '360', style: 'smallText', alignment: 'center' },
-                                { text: '$19,241', style: 'smallText', alignment: 'right' }
-                            ],
-                            [
-                                { text: 'Main Area', style: 'smallText' },
-                                { text: '240', style: 'smallText', alignment: 'center' },
-                                { text: '$31,756', style: 'smallText', alignment: 'right' }
-                            ],
-                            [
-                                { text: 'Covered Porch/Patio', style: 'smallText' },
-                                { text: '48', style: 'smallText', alignment: 'center' },
-                                { text: '$1,655', style: 'smallText', alignment: 'right' }
-                            ],
-                            [
-                                { text: 'Covered Porch/Patio', style: 'smallText' },
-                                { text: '126', style: 'smallText', alignment: 'center' },
-                                { text: '$4,345', style: 'smallText', alignment: 'right' }
-                            ]
-                        ]
-                    },
-                    layout: 'zebraLayoutA',
-                    width: '50%'
-                }
+                    {}  // 1 empty cells for colSpan: 2
             ],
-        }
+            // Linha 2: Address with colSpan 3 becomes 6
+            [
+                { text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallText', colSpan: 10 },
+                {}, {}, {}, {}, {},{}, {}, {}, {},
+                
+            ],
+
+            // Linha 3: $629 (esq.) with colSpan 3 becomes 6
+            [
+                { text: '-', style: 'smallText',
+                fontSize: 16,
+                bold: true,
+                alignment: 'center',
+                margin: [4, 5, 0, 5],
+                colSpan: 10 },
+                {}, {}, {}, {}, {},{}, {}, {}, {}
+
+            ],
+            // linha 4
+            [
+                { text: '$629,000',
+                fontSize: 16,
+                bold: true,
+                colSpan: 10,
+                margin: [4, 3.5, 0 ,4],
+                alignment: 'left',
+},
+                {}, {}, {}, {}, {},{}, {}, {}, {}
+            ],
+            // Linha 5: 02/09/2023 (esq.) with colSpan 3 becomes 6
+            [
+                { text: '02/09/2023', style: 'smallText', colSpan: 10 },
+                {}, {}, {}, {}, {}, {}, {}, {}, {}
+            ],
+            // Linha 6: rv8 (esq.) with colSpan 3 becomes 6
+            [
+                { text: 'RV8', style: 'smallText', colSpan: 10 },
+                {}, {}, {}, {}, {}, {}, {}, {}, {}
+
+            ],
+            // Linha 7: Plano (esq.) with colSpan 3 becomes 6, n0035 (dir.) with colSpan 1 becomes 4
+            [
+                { text: 'Plano', style: 'smallText', colSpan: 6 },
+                {}, {}, {}, {}, {},
+                { text: 'n0035', style: 'smallText', alignment: 'right', colSpan: 4 },
+                {}, {}, {}
+            ],
+            // Linha 8: $316,43 / $1231.156 with colSpan 3 becomes 6
+            [
+                { text: '$3161,43 / $1231.156', style: 'smallText', colSpan: 10, alignment: 'left' },
+                {}, {}, {}, {}, {}, {}, {}, {}, {}
+
+            ],
+            // ============================================
+            // HEADER
+            // ============================================
+               [
+                    { text: '-', style: 'smallTextA', alignment: 'center', colSpan: 3 },
+                    {}, {},  // 2 células vazias para completar o colSpan: 3
+                    { text: 'Diff', style: 'smallTextA', alignment: 'center', colSpan: 2 },
+                    {},  // 1 célula vazia para completar o colSpan: 2
+                    { text: 'Rate ($)', style: 'smallTextA', fontSize: 8, alignment: 'center', colSpan: 2 },
+                    {},  // 1 célula vazia para completar o colSpan: 2
+                    { text: 'Adjust.', style: 'smallTextA', alignment: 'center', colSpan: 3 },
+                    {}, {}  // 2 células vazias para completar o colSpan: 3
+                ],
+                
+                
+                [
+                    {
+                    stack: [
+                                { image: 'checkFalse', width: 8, alignment: 'center' },  // Imagem em cima
+                                { text: '6,115', style: 'smallTextA', alignment: 'center', margin: [0, 2, 0, 0], noWrap: false }  // Texto embaixo
+                                ],
+                                alignment: 'center',
+                                colSpan: 3  // Ocupa 3 colunas
+                                }, 
+                    {}, {},  // Coluna 1: imagem + texto empilhados
+                    
+                  {
+                        colSpan: 7,  // Ocupa 4 colunas
+                        stack: [
+                                    {
+                                        table: {
+                                        widths: ['auto', 'auto', 'auto'],  // Duas colunas de largura igual
+                                            body: [
+                                                    [
+                                                    { text: '164', style: 'smallTextA', fontSize: 10, alignment: 'center', noWrap: false },
+                                                    { text: '-$61', style: 'smallTextA', alignment: 'center', fontSize: 10, noWrap: false },
+                                                    { text: '-12,911', style: 'smallTextA', fontSize: 10, alignment: 'center', noWrap: false },  // Coluna 5: texto normal
+
+                                                    // Coluna 4: texto normal
+                                                    ]
+                                                    ]
+                                                    }, 
+                                                    layout: 'noBorders'  // Remove as bordas da tabela interna
+                                                    }
+                                            ],
+                                        alignment: 'center'  // Alinha o stack centralizado na célula
+                                    },
+                        {}, {}, {}, {}, {}, {}  // Células vazias para completar o colSpan: 4
+
+                ],
+                
+               [
+                    {
+                        columns: [
+                            { image: 'checkFalse', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
+                            { text: '1981', style: 'smallText', alignment: 'left' } // Text on the right
+                        ],
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Optional: Adds space between image and text
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],
+                
+                [
+                    {
+                        columns: [
+                            { image: 'checkFalse', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
+                                { text: '2005', style: 'smallText', alignment: 'left' }, // First text
+                            { text: '0', style: 'smallText', alignment: 'left' }, // Second text
+                            { text: '0', style: 'smallText', alignment: 'right' } // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto', '*'], // Widths: auto for image and first two texts, * for the third text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],  
+                
+                [
+                    
+                { text: '1', style: 'smallText', colSpan: 10, alignment: 'left',margin: [4, 0, 0, 0] },
+                {}, {}, {}, {}, {}, {}, {}, {}, {}
+
+                ],
+                
+                [
+                    {
+                        columns: [
+                            { image: 'checkTrue', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
+                                { text: '1', style: 'smallText', alignment: 'left' }, // First text
+                            { text: '-7,320', style: 'smallText', alignment: 'right' } // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto'], // Widths: auto for image and first two texts, * for the third text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],
+                
+                [
+                    {
+                        columns: [
+                            { image: 'checkTrue', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
+                                { text: '1', style: 'smallText', alignment: 'left' }, // First text
+                            { text: '0', style: 'smallText', alignment: 'right' } // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto'], // Widths: auto for image and first two texts, * for the third text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],
+                
+                 [
+                    {
+                        columns: [
+                            { image: 'checkFalse', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
+                                { text: '$225,670', style: 'smallText', alignment: 'left' }, // First text
+                            { text: '-21,599', style: 'smallText', alignment: 'right' } // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto'], // Widths: auto for image and first two texts, * for the third text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],
+                [
+                    {
+                        columns: [
+                            { image: 'checkTrue', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
+                            { text: '13,670', style: 'smallText', alignment: 'left' }, // First text
+                            { text: '-4,599', style: 'smallText', alignment: 'left' } // Third text, aligned right
+                        ],
+                        widths: ['auto', 'auto', 'auto'], // Widths: auto for image and first two texts, * for the third text
+                        colSpan: 10, // Spans all 10 columns
+                        columnGap: 5 // Space between columns
+                    },
+                    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+                ],
+                [
+    {
+        columns: [
+            { image: 'checkTrue', width: 8, alignment: 'center', margin: [4, 2, 0, 0] }, // Image on the left
+            { text: '13,670', style: 'smallText', alignment: 'left' }, // First text
+            { text: '-4,599', style: 'smallText', alignment: 'left',  margin: [4, 2, 0, 0] } // Second text, aligned right
+        ],
+        widths: ['auto', 100, '*'], // Image: auto, First text: auto, Second text: fills remaining space
+        colSpan: 10, // Spans all 10 columns
+        columnGap: 5 // Space between columns
+    },
+    {}, {}, {}, {}, {}, {}, {}, {}, {} // 9 empty cells to fill the remaining columns
+]
+                
+                
+                
+                
+
+
+        ]
+    },
+    layout: 'zebraLayoutA' // Kept the same layout
+}  
+        // ============================================
+        // ============================================
+        // ============================================
+        // Start of 3 column 
+        // ============================================
+        // ============================================
+        // ============================================
+        // ============================================
+
+        
+            ],
+        },
+
     
         
 
@@ -438,6 +538,12 @@ var dd = {
             fontSize: 12,
             bold: true,
             color: '#0C111D',
+            alignment: 'left',
+        },
+         smallTextA: {
+            fontSize: 10,
+            bold: true,
+            color: '#000000',
             alignment: 'left',
 
             
