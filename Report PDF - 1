@@ -392,7 +392,18 @@ var subjectInformationDataRow = [
               columns: [
                 { image: 'checkTrue', width: 8, alignment: 'center', margin: [4, 2, 0, 0] },
                 { text: '1', style: 'smallText', alignment: 'left' },
-                { text: '-7,320', style: 'smallTextRight', alignment: 'right' }
+                { 
+                  text: (() => {
+                    let fixture = 1830;
+                    let subject_full_baths_report = 2;
+                    let full_baths_comps = 3;
+                    let diff_full_report = full_baths_comps - subject_full_baths_report;
+                    let diff_full_baths = (diff_full_report * fixture) * -4; 
+                    return diff_full_baths.toLocaleString(); 
+                  })(),
+          style: 'smallTextRight',
+          alignment: 'right' 
+        }
               ],
               widths: ['auto', 'auto', 'auto'],
               colSpan: 10,
@@ -405,8 +416,18 @@ var subjectInformationDataRow = [
               columns: [
                 { image: 'checkTrue', width: 8, alignment: 'center', margin: [4, 2, 0, 0] },
                 { text: '1', style: 'smallText', alignment: 'left' },
-                { text: '0', style: 'smallTextRight', alignment: 'right' }
-              ],
+                { 
+                  text: (() => {
+                    let fixture = 1850;
+                    let subject_half_baths_report = 2;
+                    let half_baths_comps = 1;
+                    let diff_half_report = half_baths_comps - subject_half_baths_report;
+                    let diff_half_baths = (diff_half_report * fixture) * -2;
+                    return diff_half_baths.toLocaleString(); 
+                  })(),
+                  style: 'smallTextRight',
+                  alignment: 'right' 
+                        }              ],
               widths: ['auto', 'auto', 'auto'],
               colSpan: 10,
               columnGap: 5
@@ -492,8 +513,49 @@ var subjectInformationDataRow = [
             {
               columns: [
                 { text: 'Total Adjustments', style: 'cellLabel' },
-                { text: '-211,599', style: 'cellValue' }
-              ],
+                {text: (() => {
+                        let fixture = 3750;
+                    
+                        let subject_full_baths_report = 2;
+                        let full_baths_comps = 4;
+                        let diff_full_report = full_baths_comps - subject_full_baths_report;
+                        let input_dif_full_baths = (diff_full_report * fixture) * (-4);
+                    
+                        let subject_half_baths_report = 1;
+                        let half_baths_comps = 0;
+                        let diff_half_report = half_baths_comps - subject_half_baths_report;
+                        let input_dif_half_baths = (diff_half_report * fixture) * (-2);
+                    
+                        let input_adj_building_report = 7259;
+                        let input_dif_land = -10750;  
+                        let input_dif_pool = -30000;
+                        let input_adj_age = -18277;
+                    
+                        let other_adjustment_diff = -1712;
+                        let adjust_garage = -1276.41170601929;
+                        let property_adjustments_seller_concession = 0;  
+                        let class_value = 0;
+                        let property_adjustments_nhcd_adj = 0;  
+                    
+                        let total = 
+                            input_adj_building_report + 
+                            input_dif_land + 
+                            input_dif_pool + 
+                            input_adj_age + 
+                            input_dif_full_baths + 
+                            input_dif_half_baths + 
+                            other_adjustment_diff + 
+                            adjust_garage -
+                            Math.abs(property_adjustments_seller_concession) + 
+                            class_value + 
+                            property_adjustments_nhcd_adj;
+                
+                    let formattedTotal = (total < 0 ? "-$" : "$") + Math.abs(Math.round(total)).toLocaleString();
+                    return formattedTotal; 
+                })(),
+                style: 'cellValue',
+                alignment: 'right' },   
+            ],
               widths: ['auto', 'auto', 'auto'],
               colSpan: 10,
               columnGap: 5
@@ -504,7 +566,7 @@ var subjectInformationDataRow = [
             {
               columns: [
                 { text: 'Adjusted Value', style: 'cellLabel' },
-                { text: '611,599', style: 'cellValue' }
+                { text: '$611,599', style: 'cellValue' }
               ],
               widths: ['auto', 'auto', 'auto'],
               colSpan: 10,
@@ -668,7 +730,7 @@ var dd = {
         
 {
     
-    // COMPS INFORMATION TABLE
+    // SUBJECT INFORMATION TABLE
     
     style: 'tableStyle',
     table: {
@@ -699,7 +761,7 @@ var dd = {
                 { text: 'Pool', style: 'headerTable', fillColor: '#EFF8FF' },
                 { text: 'Story', style: 'headerTable', fillColor: '#EFF8FF' },
                 { text: 'Significant Addtl Structures', style: 'headerTable', fillColor: '#EFF8FF' },
-                { text: 'Land Area\nLand Value', style: 'headerTable', fillColor: '#EFF8FF' },
+                { text: 'CAD Proposed Value', style: 'headerTable', fillColor: '#EFF8FF' },
                 { text: 'Indicated Value', style: 'headerTable', fillColor: '#EFF8FF' }
             ],
             
@@ -957,7 +1019,7 @@ var dd = {
         alignment: 'left'
     },
     cellValue: {
-        fontSize: 16,
+        fontSize: 14,
         bold: true,
         color: '#0C111D',
         alignment: 'right'
