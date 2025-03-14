@@ -101,11 +101,31 @@ var compsInformationDataRow = [
   
 ];
 
+let dynamicRows = (() => {
+    return [
+        [
+            { text: 'Covered Porch1 PATIO', style: 'smallTextOtherImpro', margin: [0, 0, 0, 0], colSpan: 5 }, {}, {}, {}, {},
+            { text: '134', style: 'smallTextOtherImpro', colSpan: 2 }, {},
+            { text: '-112,911', style: 'smallTextOtherImpro', colSpan: 3 }, {}, {}
+        ],
+        [
+            { text: 'Covered Porch1 PATIO', style: 'smallTextOtherImpro', margin: [0, 0, 0, 0], colSpan: 5 }, {}, {}, {}, {},
+            { text: '134', style: 'smallTextOtherImpro', colSpan: 2 }, {},
+            { text: '-112,911', style: 'smallTextOtherImpro', colSpan: 3 }, {}, {}
+        ],
+        [
+            { text: 'Covered Porch1 PATIO', style: 'smallTextOtherImpro', margin: [0, 0, 0, 0], colSpan: 5 }, {}, {}, {}, {},
+            { text: '134', style: 'smallTextOtherImpro', colSpan: 2 }, {},
+            { text: '-112,911', style: 'smallTextOtherImpro', colSpan: 3 }, {}, {}
+        ]
+    ];
+})();
+
 // Subject Information Data Row
 var subjectInformationDataRow = [
         
         [
-            { text: '15432\n20219238', style: 'smallTextCenter' },
+            { text: '15432\n20219238', style: 'textAccountNumber' },
             { text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallTextCenter' },
             { text: 'N0035\n0.16', style: 'smallTextCenter' },
             { text: 'BENT TREE WEST PHASE\n2 (CDA)', style: 'smallTextCenter' },
@@ -136,89 +156,85 @@ var subjectInformationDataRow = [
             style: 'tableStyle',
             table: {
                 headerRows: 0,
-                widths: ['50%', '50%'],
+                widths: ['10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%'],
                 body: [
                     [
                         { text: 'Account Number:', style: 'smallText', fontSize: 12,
-            bold: true, 
-            margin: [5, 1.7, 5, 0]  
-},
-                        { text: '15931', style: 'smallText', alignment: 'right', fontSize: 22,
-            bold: true }
-                    ],
-                    [
-                        { text: 'Property Address:', style: 'smallText',  fontSize: 12,
-            bold: true },
-                        { text: '4106 BRIARGROVE LN\nDALLAS, TX 75287', style: 'smallText', fontSize: 8 , bold: true, alignment: 'right' }
-                    ],
-                    [
-                        { text: 'Proposed Value:', style: 'smallText' },
-                        { text: '$580,206', style: 'smallText',
-                        alignment: 'right',
+                            bold: true, 
+                            margin: [5, 1.7, 5, 0],
+                            colSpan: 5
+                        }, {},{},{},{},
+                        
+                        { text: '15931', style: 'smallText', alignment: 'right',
+                        fontSize: 22,
                         bold: true,
-                        fontSize: 16,
-                        margin: [0, 5, 0, 5],
-     }
+                        colSpan: 5  }, {},{},{},{}
                     ],
                     [
-                        { text: 'Sales Price:', style: 'smallText', margin: [0, 6, 0, 6] },
-                        { text: '(Concession)', style: 'smallTextDestructive',fontSize: 12, alignment: 'right', margin: [0, 6, 0, 6], }
+                        { text: 'Property Address:', style: 'smallText', fontSize: 12, bold: true, colSpan: 5 }, {}, {}, {}, {},
+                        { text: '4106 BRIARGROVE LN\nDALLAS, TX 75287', style: 'smallText', fontSize: 8, bold: true, alignment: 'right', colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Sales Date:', style: 'smallText' },
-                        { text: '-', style: 'smallText', alignment: 'center' }
+                        { text: 'Proposed Value:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '$580,206', style: 'smallText', alignment: 'right', bold: true, fontSize: 16, margin: [0, 5, 0, 5], colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Class:', style: 'smallText' },
-                        { text: 'RV8', style: 'smallText', alignment: 'right' }
+                        { text: 'Sales Price:', style: 'smallText', margin: [0, 6, 0, 6], colSpan: 5 }, {}, {}, {}, {},
+                        { text: '(Concession)', style: 'smallTextDestructive', fontSize: 12, alignment: 'right', margin: [0, 6, 0, 6], colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'ISD:', style: 'smallText' },
-                        { text: 'PLANO', style: 'smallText', alignment: 'right' }
+                        { text: 'Sales Date:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '-', style: 'smallText', alignment: 'center', colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Improvement Value', style: 'smallText', colSpan: 2 },
-                        { }
-                    ],
-                     [
-                        { text: 'Bldg PPSF', style: 'smallText',  colSpan: 2, margin: [0, 1.8 , 0, 3] },
-                        {  }
+                        { text: 'Class:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: 'RV8', style: 'smallText', alignment: 'right', colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Square Foot:', style: 'smallText', margin: [0, 4, 0, 3.7] },
-                        { text: '2,851', style: 'smallText', alignment: 'right', margin: [0, 4, 0, 3.7] }
+                        { text: 'ISD:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: 'PLANO', style: 'smallText', alignment: 'right', colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Year Built:', style: 'smallText' },
-                        { text: '1984', style: 'smallText', alignment: 'right' }
+                        { text: 'Improvement Value', style: 'smallText', colSpan: 10 }, {}, {}, {}, {}, {}, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'EYOC:', style: 'smallText' },
-                        { text: '2005', style: 'smallText', alignment: 'right' }
+                        { text: 'Bldg PPSF', style: 'smallText', colSpan: 10, margin: [0, 1.8, 0, 3] }, {}, {}, {}, {}, {}, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Story Height:', style: 'smallText' },
-                        { text: '2', style: 'smallText', alignment: 'right' }
+                        { text: 'Square Foot:', style: 'smallText', margin: [0, 4, 0, 3.7], colSpan: 5 }, {}, {}, {}, {},
+                        { text: '2,851', style: 'smallText', alignment: 'right', margin: [0, 4, 0, 3.7], colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Full Baths:', style: 'smallText' },
-                        { text: '2', style: 'smallText', alignment: 'right' }
+                        { text: 'Year Built:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '1984', style: 'smallText', alignment: 'right', colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Half Baths:', style: 'smallText' },
-                        { text: '1', style: 'smallText', alignment: 'right' }
+                        { text: 'EYOC:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '2005', style: 'smallText', alignment: 'right', colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Land Value:', style: 'smallText' },
-                        { text: '$204,250', style: 'smallText', alignment: 'right', bold: true }
+                        { text: 'Story Height:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '2', style: 'smallText', alignment: 'right', colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Land Size:', style: 'smallText', margin: [0, 1, 0 ,1] },
-                        { text: '9,583', style: 'smallText', alignment: 'right' }
+                        { text: 'Full Baths:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '2', style: 'smallText', alignment: 'right', colSpan: 5 }, {}, {}, {}, {}
                     ],
                     [
-                        { text: 'Garage Size:', style: 'smallText' },
-                        { text: '399', style: 'smallText', alignment: 'right' }
+                        { text: 'Half Baths:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '1', style: 'smallText', alignment: 'right', colSpan: 5 }, {}, {}, {}, {}
+                    ],
+                    [
+                        { text: 'Land Value:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '$204,250', style: 'smallText', alignment: 'right', bold: true, colSpan: 5 }, {}, {}, {}, {}
+                    ],
+                    [
+                        { text: 'Land Size:', style: 'smallText', margin: [0, 1, 0, 1], colSpan: 5 }, {}, {}, {}, {},
+                        { text: '9,583', style: 'smallText', alignment: 'right', colSpan: 5 }, {}, {}, {}, {}
+                    ],
+                    [
+                        { text: 'Garage Size:', style: 'smallText', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '399', style: 'smallText', alignment: 'right', colSpan: 5 }, {}, {}, { }, {}
                     ],
                     [
                     {
@@ -236,25 +252,39 @@ var subjectInformationDataRow = [
                             { text: '$0', style: 'smallText', alignment: 'right', bold: true } 
                         ],
                         widths: ['auto', 'auto', 'auto', '*'],
-                        colSpan: 2, 
+                        colSpan: 10, 
                         columnGap: 5 
                     },
-                    {}
+                    {},{},{},{},{},{},{},{},{}
                     ],
                     
                     [
-                    {
-                        columns: [
-                            { text: 'Other Improvements:', style: 'smallText', alignment: 'left', fontSize: 12 }, 
-                            { text: '$6,522', style: 'smallText', alignment: 'left', bold: true,  margin: [12, 8, 0, 8]  } 
-                        ],
-                        width: ['*', '*'],
-                        colSpan: 2, 
-                    },
-                    {}
+                        {
+                            columns: [
+                                { text: 'Other Improvements:', style: 'smallText', alignment: 'left', fontSize: 12 }, 
+                                { text: '$6,522', style: 'smallText', alignment: 'left', bold: true,  margin: [12, 8, 0, 8]  } 
+                            ],
+                            width: ['*', '*'],
+                            colSpan: 10, 
+                        }, {},{},{},{},{},{},{},{},{}
                     ],
-                    
-                    
+                    [
+                        { text: '', colSpan: 10, margin: [0, 51.8, 0, 0], border: [true, true, true, true] }, {}, {}, {}, {}, {}, {}, {}, {}, {}
+                    ],
+                    [
+                        { text: 'Other Improvements Detailed', style: 'HeaderOtherImpro', colSpan: 10, alignment: 'center' }, {}, {}, {}, {}, {}, {}, {}, {}, {}
+                    ],
+                    [
+                        { text: 'sqf', style: 'smallTextOtherImpro', alignment: 'right', colSpan: 5, border: [true, true, false, true] }, {}, {}, {}, {},
+                        { text: '$ Imprv Detail', style: 'smallTextOtherImpro', alignment: 'right', colSpan: 5, border: [false, true, true, true] }, {}, {}, {}, {}
+                     ],
+                // BODY
+                    [
+                        { text: 'Covered Porch/Pati1o', style: 'smallTextOtherImpro', colSpan: 5 }, {}, {}, {}, {},
+                        { text: '51613', style: 'smallTextOtherImpro', colSpan: 2 }, {},
+                        { text: '-112,911', style: 'smallTextOtherImpro', colSpan: 3 }, {}, {}
+                    ],
+                
                     
                     
                 ],
@@ -562,18 +592,39 @@ var subjectInformationDataRow = [
             },
             {}, {}, {}, {}, {}, {}, {}, {}, {}
           ],
-          [
-            {
-              columns: [
-                { text: 'Adjusted Value', style: 'cellLabel' },
-                { text: '$611,599', style: 'cellValue' }
-              ],
-              widths: ['auto', 'auto', 'auto'],
-              colSpan: 10,
-              columnGap: 5
-            },
-            {}, {}, {}, {}, {}, {}, {}, {}, {}
-          ]
+           [
+                {
+                  columns: [
+                    { text: 'Adjusted Value', style: 'cellLabel' },
+                    { text: '$611,599', style: 'cellValue' }
+                  ],
+                  widths: ['auto', 'auto', 'auto'],
+                  colSpan: 10,
+                  columnGap: 5
+                },
+                {}, {}, {}, {}, {}, {}, {}, {}, {}
+             ],
+             
+                // OTHER Imprvs Detailed
+
+                [
+                    { text: 'Other Improvements Detailed', style: 'HeaderOtherImpro', colSpan: 10, alignment: 'center' }, {}, {}, {}, {}, {}, {}, {}, {}, {}
+                ],
+                [
+                    { text: 'sqf', style: 'smallTextOtherImpro', alignment: 'right', colSpan: 5, border: [true, true, false, true] }, {}, {}, {}, {},
+                    { text: '$ Imprv Detail', style: 'smallTextOtherImpro', alignment: 'right', colSpan: 5, border: [false, true, true, true] }, {}, {}, {}, {}
+                ],
+                // BODY
+                
+                
+                [
+                    { text: 'Covered Porch1 PATIO', style: 'smallTextOtherImpro', margin: [0, 0, 0, 0], colSpan: 5 }, {}, {}, {}, {},
+                    { text: '134', style: 'smallTextOtherImpro', colSpan: 2 }, {},
+                    { text: '-112,911', style: 'smallTextOtherImpro', colSpan: 3 }, {}, {}
+                ],
+                
+                ...dynamicRows
+                
         ]
       },
       layout: 'zebraLayoutA'
@@ -586,84 +637,6 @@ var subjectInformationDataRow = [
 ];
 
     
-    var otherImprovementsDetailedColumns = [
-    // ============================================
-    // START FIXED COLUMN
-    // ============================================
-    {
-        width: '12.5%',
-        style: 'tableStyle',
-        table: {
-            headerRows: 0,
-            widths: ['10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%'],
-            body: [
-                // HEADER
-                [
-                    { text: 'Other Improvements Detailed', style: 'smallTextOtherImpro', colSpan: 10, alignment: 'center' }, {}, {}, {}, {}, {}, {}, {}, {}, {}
-                ],
-                [
-                    { text: 'sqf', style: 'smallTextOtherImpro', alignment: 'right', colSpan: 5, border: [true, true, false, true] }, {}, {}, {}, {},
-                    { text: '$ Imprv Detail', style: 'smallTextOtherImpro', alignment: 'right', colSpan: 5, border: [false, true, true, true] }, {}, {}, {}, {}
-                ],
-                
-                // BODY
-                [
-                    { text: 'Covered Porch', style: 'smallTextOtherImpro', colSpan: 5 }, {}, {}, {}, {},
-                    { text: '5613', style: 'smallTextOtherImpro', colSpan: 2 }, {},
-                    { text: '-112,911', style: 'smallTextOtherImpro', colSpan: 3 }, {}, {}
-                ],
-                [
-                    { text: 'Main Area', style: 'smallTextOtherImpro', colSpan: 5 }, {}, {}, {}, {},
-                    { text: '5613', style: 'smallTextOtherImpro', colSpan: 2 }, {},
-                    { text: '-112,911', style: 'smallTextOtherImpro', colSpan: 3 }, {}, {}
-                ]
-            ]
-        },
-        layout: 'zebraLayoutBlue'
-    },
-    // ============================================
-    // END FIXED COLUMN
-    // ============================================
-
-    // ============================================
-    // START DYNAMIC COLUMN
-    // ============================================
-    {
-        width: '12.5%',
-        style: 'tableStyle',
-        table: {
-            headerRows: 0,
-            widths: ['10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%'],
-            body: [
-                // HEADER
-                [
-                    { text: 'Other Improvements Detailed', style: 'smallTextOtherImpro', colSpan: 10, alignment: 'center' }, {}, {}, {}, {}, {}, {}, {}, {}, {}
-                ],
-                [
-                    { text: 'sqf', style: 'smallTextOtherImpro', alignment: 'right', colSpan: 5, border: [true, true, false, true] }, {}, {}, {}, {},
-                    { text: '$ Imprv Detail', style: 'smallTextOtherImpro', alignment: 'right', colSpan: 5, border: [false, true, true, true] }, {}, {}, {}, {}
-                ],
-                
-                // BODY
-                [
-                    { text: 'Covered Porch', style: 'smallTextOtherImpro', colSpan: 5 }, {}, {}, {}, {},
-                    { text: '5613', style: 'smallTextOtherImpro', colSpan: 2 }, {},
-                    { text: '-112,911', style: 'smallTextOtherImpro', colSpan: 3 }, {}, {}
-                ],
-                [
-                    { text: 'Main Area', style: 'smallTextOtherImpro', colSpan: 5 }, {}, {}, {}, {},
-                    { text: '5613', style: 'smallTextOtherImpro', colSpan: 2 }, {},
-                    { text: '-112,911', style: 'smallTextOtherImpro', colSpan: 3 }, {}, {}
-                ]
-            ]
-        },
-        layout: 'zebraLayout'
-    }
-    // ============================================
-    // END DYNAMIC COLUMN
-    // ============================================
-];
-
 
 
 
@@ -864,25 +837,8 @@ var dd = {
 
     {
       columns: compsInformationDetailed,
-    },
-
-        
-        
-        // ============================================
-        // ============================================
-        // Start of TABLE OTHER IMPROVEMENTES DETAILED 
-        // ============================================
-        // ============================================
-
-
-    {
-      columns: otherImprovementsDetailedColumns,
     }
 
-        
-        // ============================================
-        // END TABLE IMPROVEMETNS DETAILED
-        // ============================================
 
 
         
@@ -935,6 +891,12 @@ var dd = {
         color: '#0C111D',
         alignment: 'center'
     },
+    textAccountNumber: {
+        fontSize: 4,
+        bold: true,
+        color: '#0C111D',
+        alignment: 'center'
+    },
     smallTextA: {
         fontSize: 10,
         bold: true,
@@ -942,14 +904,22 @@ var dd = {
         alignment: 'left'
     },
     smallTextOtherImpro: {
-        fontSize: 8,
+        fontSize: 6,
+        bold: true,
+        color: '#000000',
+        noWrap: true,
+        margin: [0, 0, 0, 0]
+    },
+        HeaderOtherImpro: {
+        fontSize: 10,
         bold: true,
         color: '#000000',
         alignment: 'center',
         noWrap: false,
-        margin: [0, 4.7, 0, 4.7],
+        margin: [0, 2.7, 0, 2.7],
         lineHeight: 1.2
     },
+    
     smallTextDestructive: {
         fontSize: 14,
         bold: true,
