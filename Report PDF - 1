@@ -159,14 +159,14 @@ var subjectInformationDataRow = [
                 widths: ['10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%'],
                 body: [
                     [
-                        { text: 'Account Number:', style: 'smallText', fontSize: 12,
+                        { text: 'Account Number:', style: 'smallText', fontSize: 8,
                             bold: true, 
                             margin: [5, 1.7, 5, 0],
                             colSpan: 5
                         }, {},{},{},{},
                         
                         { text: '15931', style: 'smallText', alignment: 'right',
-                        fontSize: 22,
+                        fontSize: 16,
                         bold: true,
                         colSpan: 5  }, {},{},{},{}
                     ],
@@ -312,13 +312,13 @@ var subjectInformationDataRow = [
         widths: ['10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%', '10%'],
         body: [
           [
-            { text: '15432', style: 'cellNumber', colSpan: 8 },
+            { text: '15432', style: 'cellNumber', colSpan: 8, fontSize: 14 },
             {}, {}, {}, {}, {}, {}, {},
-            { text: '1', style: 'cellRightNumber', colSpan: 2 },
+            { text: '1', style: 'cellRightNumber', colSpan: 2, fontSize: 14 },
             {}
           ],
           [
-            { text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallText', colSpan: 10 },
+            { text: '4120 BRETTON BAY LN 14134 14314\nDALLAS, TX 75287\n ', style: 'smallText', fontSize: 8, colSpan: 10 },
             {}, {}, {}, {}, {}, {}, {}, {}, {}
           ],
           [
@@ -403,13 +403,12 @@ var subjectInformationDataRow = [
             {
               columns: [
                 { image: 'checkFalse', width: 8, alignment: 'center', margin: [4, 2, 0, 0] },
-                { text: '2005', style: 'smallText', alignment: 'left' },
-                { text: '0', style: 'smallText', alignment: 'left' },
-                { text: '0', style: 'smallTextRight', alignment: 'right' }
+                { text: '2005', style: 'smallText', width: 32, alignment: 'left' },
+                { text: '2200', style: 'smallText', width: 32, alignment: 'left' },
+                { text: '-14780565.8', style: 'smallTextRight', width: 'auto', alignment: 'right', margin: [-4, 0, 0, 0], fontSize: 10 }
               ],
-              widths: ['auto', 'auto', 'auto', '*'],
               colSpan: 10,
-              columnGap: 5
+              columnGap: 4
             },
             {}, {}, {}, {}, {}, {}, {}, {}, {}
           ],
@@ -496,7 +495,7 @@ var subjectInformationDataRow = [
                 { image: 'checkFalse', width: 8, alignment: 'center', margin: [4, 2, 0, 0] },
                 { text: '506', style: 'smallText', alignment: 'left' },
                 { text: '107', style: 'smallText', alignment: 'left' },
-                { text: '-3257', style: 'smallTextRight', alignment: 'right', bold: true }
+                { text: '-11,550', style: 'smallTextRight', alignment: 'right', bold: true, margin: [-10, 2, 0, 0] }
               ],
               widths: ['auto', 'auto', 'auto'],
               colSpan: 10,
@@ -519,7 +518,7 @@ var subjectInformationDataRow = [
                                 width: 'auto',
                                 margin: [-40, 0, 0, 0]
                             },
-                            { text: '-3257', style: 'smallText', alignment: 'right', bold: true }
+                            { text: '-11,550', style: 'smallText', alignment: 'right', bold: true, margin: [-10, 2, 0, 0] }
                         ],
                         widths: ['auto', 'auto', 'auto', '*'], 
                         colSpan: 10, 
@@ -544,7 +543,7 @@ var subjectInformationDataRow = [
               columns: [
                 { text: 'Total Adjustments', style: 'cellLabel' },
                 {text: (() => {
-                        let fixture = 3750;
+                        let fixture = 3750111;
                     
                         let subject_full_baths_report = 2;
                         let full_baths_comps = 4;
@@ -584,7 +583,8 @@ var subjectInformationDataRow = [
                     return formattedTotal; 
                 })(),
                 style: 'cellValue',
-                alignment: 'right' },   
+                alignment: 'right',
+                fontSize: 12},   
             ],
               widths: ['auto', 'auto', 'auto'],
               colSpan: 10,
