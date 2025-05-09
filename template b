@@ -108,7 +108,7 @@ pdfMake.tableLayouts = {
                 
                   [
                       { text: 'Living Area Size\nBathroom (Full)\nBathroom (half)\nYear Built\nEffective Year Built', style: 'smallTextSubject', border: [true, false, false, false],  margin: [0,6, 0, 0],colSpan: 6 }, {}, {}, {}, {}, {},
-                      { text: 4408, style: 'smallText', fillColor: "#F0F9FF",border: [true, false, true, false], margin: [0, 6, 0, 0], alignment: 'center', colSpan: 4 },  {}, {}, {}
+                      { text: "4408 \n 13", style: 'smallText', fillColor: "#F0F9FF",border: [true, false, true, false], margin: [0, 6, 0, 0], alignment: 'center', colSpan: 4 },  {}, {}, {}
                   ],
                   
                   [
@@ -197,10 +197,59 @@ pdfMake.tableLayouts = {
                   
                   ],
                 
-                  [
-                      { text: '+130\n12\n46\n437\n65', style: 'smallTextAB', alignment: 'center',border: [true, false, false, true],  margin: [0, -6, 0, 0],colSpan: 5 }, {}, {}, {}, {}, 
-                      { text: "-$9,753\n12\n46\n437\n65", style: 'smallTextAB',border: [false, false, true, true], margin: [0, -2, 0, 0], alignment: 'right', colSpan: 5 },  {}, {}, {}, {}
-                  ],
+                    // … seu array de linhas anterior …
+                    
+                                         [
+  {
+    text: (() => {
+      // full baths
+      const fixtureFull = 1830;
+      const subjectFull = 2;
+      const compsFull = 3;
+      const diffFull = (compsFull - subjectFull) * fixtureFull * -4;
+
+      // half baths
+      const fixtureHalf = 1850;
+      const subjectHalf = 2;
+      const compsHalf = 1;
+      const diffHalf = (compsHalf - subjectHalf) * fixtureHalf * -2;
+
+      // valores estáticos adicionais
+      const valor1 = 437;
+      const valor2 = 65;
+      const valor3 = 1;
+
+      // formata sinal positivo/negativo automaticamente e monta a string
+      const sig = n => (n >= 0 ? `+${n}` : n.toString());
+      return [
+        sig(diffFull),
+        'full bath',
+        sig(diffHalf),
+        'half bath',
+        valor1,
+        valor2,
+        valor3
+      ].join('\n');
+    })(),
+    style: 'smallTextAB',
+    alignment: 'center',
+    border: [true, false, false, true],
+    margin: [0, 0, 0, 0],
+    colSpan: 5
+  },
+  {}, {}, {}, {}, // completa as 5 colunas do colSpan
+{ 
+                        text: '+430\n12\n46\n437\n65', 
+                        style: 'smallTextAB', 
+                        alignment: 'center',
+                        border: [true, false, false, true],  
+                        margin: [0, -6, 0, 0],
+                        colSpan: 5 
+                      }, {}, {}, {}, {},
+                      
+                      ],
+
+
                   [
                       { text: 'Adjusted Value: $884,42', fontSize: 12, noWrap: true, bold: true, color: '#0C111D', alignment: 'center', border: [true, false, false, true], fillColor: "#DCFAE6", margin: [0, 0, 0, 0], colSpan: 10 }, {}, {}, {}, {}, {}, {}, {}, {}, {}, 
                   ],
