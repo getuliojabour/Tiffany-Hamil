@@ -75,7 +75,8 @@ pdfMake.tableLayouts = {
 var compsInformationDataRow = [
   // Data Row 1
   [
-    { text: '15432\n20219238', style: 'smallTextCenter' },
+      
+    { text: '-     15432\n1     20219238', margin: [8, 0, 0, 0] ,     alignment: 'left', style: 'smallTextCenter' },
     { text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallTextCenter' },
     { text: 'N0035\n0.16', style: 'smallTextCenter' },
     { text: 'BENT TREE WEST PHASE\n2 (CDA)', style: 'smallTextCenter' },
@@ -90,7 +91,14 @@ var compsInformationDataRow = [
     { text: '1', style: 'smallTextCenter' },
     { text: 'NO', style: 'smallTextCenter' },
     { text: '$629,000\n2/09/23', style: 'smallTextCenter', bold: true, color: '#101828' },
-    { text: '$500,338', style: 'smallTextCenter', bold: true, color: '#101828' }
+    { text: '$500,338',
+                  style: 'smallTextCenter',
+                  bold: true,
+                  color: '#0A71F5',      
+                  fillColor: '#FFF380',   
+                  margin: [0, 12, 0, 12]
+                },
+
   ],
   // Comment Row for Data Row 1
   [
@@ -125,6 +133,7 @@ let dynamicRows = (() => {
 var subjectInformationDataRow = [
         
         [
+            
             { text: '15432\n20219238', style: 'textAccountNumber' },
             { text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallTextCenter' },
             { text: 'N0035\n0.16', style: 'smallTextCenter' },
@@ -140,7 +149,8 @@ var subjectInformationDataRow = [
             { text: '1', style: 'smallTextCenter' },
             { text: 'NO', style: 'smallTextCenter' },
             { text: '$629,000\n2/09/23', style: 'smallTextCenter', bold: true, color: '#101828' },
-            { text: '$500,338', style: 'smallTextCenter', bold: true, color: '#101828' }
+            { text: '$500,338', style: 'smallTextCenter', bold: true, margin: [0, 12, 0, 12], fillColor: '#6AAAF9', color: 'white'   }
+
         ]
     
     ];
@@ -291,7 +301,7 @@ var subjectInformationDataRow = [
                 
                 
             },
-            layout: 'zebraLayoutBlue' 
+            layout: 'zebraLayoutBlue'
         },
         
     // ============================================
@@ -708,14 +718,22 @@ var dd = {
     style: 'tableStyle',
     table: {
         headerRows: 2, 
-        widths: ['8%', '11.4%', '4%', '12%', '6%', '4.5%', '4.5%', '3.2%', '5.2%', '4.2%', '6.2%', '3%', '3.2%', '9%', '8.2%', '7.5%'],
+        widths: ['8%', '11.4%', '4%', '15.5%', '6%', '4.5%', '4.5%', '3.2%', '4.8%', '4.2%', '6.2%', '3%', '3.2%', '6%', '8.2%', '7.5%'],
         body: [
             // ============================================
             // STATIC LINE 1 COMPS INFORMATION
             // ============================================
             [
-                { text: 'SUBJECT INFORMATION', style: 'headerTable', colSpan: 16, alignment: 'center' ,fillColor: 'zebraLayoutBlue', margin: [0, 2, 0, 4] }, {}, {},{}, {}, {}, {},{},{}, {}, {}, {}, {}, {}, {}, {}
-            ],
+                {
+                  text: 'SUBJECT INFORMATION',
+                  style: 'headerTable',
+                  colSpan: 16,
+                  alignment: 'center',
+                  fillColor: '#0A71F5', 
+                  color: 'white',
+                  margin: [0, 2, 0, 4]
+                }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
+                            ],
             // ============================================
             // STATIC LINE 2 - HEADER's TITLEs
             // ============================================
@@ -724,7 +742,7 @@ var dd = {
                 { text: 'Property Location', style: 'headerTable', fillColor: '#EFF8FF' },
                 { text: 'NHCD', style: 'headerTable', fillColor: '#EFF8FF' },
                 { text: 'Addition Name', style: 'headerTable', fillColor: '#EFF8FF' },
-                { text: 'Class ISD', style: 'headerTable', fillColor: '#EFF8FF' },
+                { text: 'Class\nISD', style: 'headerTable', fillColor: '#EFF8FF' },
                 { text: 'Building Area', style: 'headerTable', fillColor: '#EFF8FF' },
                 { text: 'Yr Built EYOC', style: 'headerTable', fillColor: '#EFF8FF' },
                 { text: 'Beds', style: 'headerTable', fillColor: '#EFF8FF' },
@@ -764,13 +782,21 @@ var dd = {
     style: 'tableStyle',
     table: {
         headerRows: 2, 
-        widths: ['8%', '11.4%', '4%', '12%', '6%', '4.5%', '4.5%', '3.2%', '5.2%', '4.2%', '6.2%', '3%', '3.2%', '9%', '8.2%', '7.5%'],
+        widths: ['8%', '11.4%', '4%', '15.5%', '6%', '4.5%', '4.5%', '3.2%', '4.8%', '4.2%', '6.2%', '3%', '3.2%', '6%', '8.2%', '7.5%'],
         body: [
             // ============================================
             // STATIC LINE 1 COMPS INFORMATION
             // ============================================
             [
-                { text: 'COMPS INFORMATION', style: 'headerTable', colSpan: 16, alignment: 'center' ,fillColor: '#F2F4F7', margin: [0, 2, 0, 4] }, {}, {},{}, {}, {}, {},{},{}, {}, {}, {}, {}, {}, {}, {}
+                {
+                  text: 'COMPS INFORMATION',
+                  style: 'headerTable',
+                  colSpan: 16,
+                  alignment: 'center',
+                  fillColor: '#FFFF00',
+                  color: '#0A71F5',
+                  margin: [0, 2, 0, 4]
+                }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
             ],
             // ============================================
             // STATIC LINE 2 - HEADER's TITLEs
@@ -780,7 +806,7 @@ var dd = {
                 { text: 'Property Location', style: 'headerTable', fillColor: '#F2F4F7' },
                 { text: 'NHCD\nDIST', style: 'headerTable', fillColor: '#F2F4F7' },
                 { text: 'Addition Name', style: 'headerTable', fillColor: '#F2F4F7' },
-                { text: 'Class ISD', style: 'headerTable', fillColor: '#F2F4F7' },
+                { text: 'Class\nISD', style: 'headerTable', fillColor: '#F2F4F7' },
                 { text: 'Building Area', style: 'headerTable', fillColor: '#F2F4F7' },
                 { text: 'Yr Built EYOC', style: 'headerTable', fillColor: '#F2F4F7' },
                 { text: 'Beds', style: 'headerTable', fillColor: '#F2F4F7' },
