@@ -72,42 +72,117 @@ pdfMake.tableLayouts = {
     }
 };
 
-var compsInformationDataRow = [
-  // Data Row 1
-  [
-      
-    { text: '-     15432\n1     20219238', margin: [8, 0, 0, 0] ,     alignment: 'left', style: 'smallTextCenter' },
-    { text: '4120 BRETTON BAY LN\nDALLAS, TX 75287', style: 'smallTextCenter' },
-    { text: 'N0035\n0.16', style: 'smallTextCenter' },
-    { text: 'BENT TREE WEST PHASE\n2 (CDA)', style: 'smallTextCenter' },
-    { text: 'RV8\nPLANO ISD', style: 'smallTextCenter' },
-    { text: '3,115', style: 'smallTextCenter' },
-    { text: '1981\n2005', style: 'smallTextCenter' },
-    { text: '4', style: 'smallTextCenter' },
-    { text: '3/1', style: 'smallTextCenter' },
-    { text: '506', style: 'smallTextCenter' },
-    { text: '13,939\n$225,750', style: 'smallTextCenter' },
-    { text: 'Y', style: 'smallTextCenter' },
-    { text: '1', style: 'smallTextCenter' },
-    { text: 'NO', style: 'smallTextCenter' },
-    { text: '$629,000\n2/09/23', style: 'smallTextCenter', bold: true, color: '#101828' },
-    { text: '$500,338',
-                  style: 'smallTextCenter',
-                  bold: true,
-                  color: '#0A71F5',      
-                  fillColor: '#FFF380',   
-                  margin: [0, 12, 0, 12]
-                },
+function buildCompsInformationDataRow(data) {
+  return data.flatMap((item, idx) => [
+    // Linha de dados
+    [
+      {
+        text: `-     ${item.code}\n${idx + 1}     ${item.idNumber}`,
+        margin: [8, 0, 0, 0],
+        alignment: 'left',
+        style: 'smallTextCenter'
+      },
+      { text: item.address,             style: 'smallTextCenter' },
+      { text: item.n0035,               style: 'smallTextCenter' },
+      { text: item.phase,               style: 'smallTextCenter' },
+      { text: item.schoolZone,          style: 'smallTextCenter' },
+      { text: item.sqft,                style: 'smallTextCenter' },
+      { text: item.yearBuilt + '\n' + item.yearSold, style: 'smallTextCenter' },
+      { text: item.beds,                style: 'smallTextCenter' },
+      { text: item.baths,               style: 'smallTextCenter' },
+      { text: item.garage,              style: 'smallTextCenter' },
+      { text: item.tax + '\n' + item.assessment, style: 'smallTextCenter' },
+      { text: item.flag,                style: 'smallTextCenter' },
+      { text: item.rank,                style: 'smallTextCenter' },
+      { text: item.status,              style: 'smallTextCenter' },
+      { text: `$${item.price}\n${item.date}`, style: 'smallTextCenter', bold: true, color: '#101828' },
+      {
+        text: `$${item.valuation}`,
+        style: 'smallTextCenter',
+        bold: true,
+        color: '#0A71F5',
+        fillColor: '#FFF380',
+        margin: [0, 12, 0, 12]
+      }
+    ],
+    // Linha de comentário
+    [
+      { text: `Comment Field 1: ${item.comment1}`, style: 'commentStyle', colSpan: 8, alignment: 'left' }, 
+      {}, {}, {}, {}, {}, {}, {},
+      { text: `Comment Field 2: ${item.comment2}`, style: 'commentStyle', colSpan: 8, alignment: 'left' },
+      {}, {}, {}, {}, {}, {}, {}
+    ]
+  ]);
+}
 
-  ],
-  // Comment Row for Data Row 1
-  [
-    { text: 'Comment Field 1: some note', style: 'commentStyle', colSpan: 8, alignment: 'left' }, {}, {}, {}, {}, {}, {}, {},
-    { text: 'Comment Field 2: another note', style: 'commentStyle', colSpan: 8, alignment: 'left' }, {}, {}, {}, {}, {}, {}, {}
-  ]
-
-  
+// Exemplo de uso:
+const myData = [
+  {
+    code: 15432,
+    idNumber: 20219238,
+    address: '4120 BRETTON BAY LN\nDALLAS, TX 75287',
+    n0035: 'N0035\n0.16',
+    phase: 'BENT TREE WEST PHASE\n2 (CDA)',
+    schoolZone: 'RV8\nPLANO ISD',
+    sqft: '3,115',
+    yearBuilt: 1981,
+    yearSold: 2005,
+    beds: 4,
+    baths: '3/1',
+    garage: 506,
+    tax: '13,939',
+    assessment: '$225,750',
+    flag: 'Y',
+    rank: 1,
+    status: 'NO',
+    price: 629000,
+    date: '2/09/23',
+    valuation: 500338,
+    comment1: 'some note',
+    comment2: 'another note'
+  },
+    {
+    code: 15432,
+    idNumber: 20219238,
+    address: '4120 BRETTON BAY LN\nDALLAS, TX 75287',
+    n0035: 'N0035\n0.16',
+    phase: 'BENT TREE WEST PHASE\n2 (CDA)',
+    schoolZone: 'RV8\nPLANO ISD',
+    sqft: '3,115',
+    yearBuilt: 1981,
+    yearSold: 2005,
+    beds: 4,
+    baths: '3/1',
+    garage: 506,
+    tax: '13,939',
+    assessment: '$225,750',
+    flag: 'Y',
+    rank: 1,
+    status: 'NO',
+    price: 629000,
+    date: '2/09/23',
+    valuation: 500338,
+    comment1: 'some note',
+    comment2: 'another note'
+  },
 ];
+
+const compsInformationDataRow = buildCompsInformationDataRow(myData);
+
+// e então no seu docDefinition:
+const docDefinition = {
+  content: [
+    {
+      table: {
+        headerRows: 0,
+        widths: [/* … */],
+        body: compsInformationDataRow
+      },
+      layout: 'zebraLayout'
+    }
+  ]
+};
+
 
 let dynamicRows = (() => {
     return [
